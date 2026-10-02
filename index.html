@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Sélection de projets de design</title>
+  <meta name="description" content="Portfolio de travaux de design : identité visuelle, affiches, UI, présentations, cartographie. Sélection de projets sans information personnelle.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts : DM Serif Display (titres) + DM Sans (textes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles principaux -->
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       CURSOR GLOW (Effet lumineux suivant la souris, desktop)
+       ============================================================ -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION MINIMALE
+       ============================================================ -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <!-- Wordmark neutre du portfolio -->
+      <a href="#top" class="logo-wordmark" aria-label="Retour en haut">
+        <span class="logo-dot"></span>
+        Design Works
+      </a>
+
+      <!-- Navigation de section -->
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a href="#projects" class="header-nav-link">Projets</a>
+        <a href="#about-work" class="header-nav-link">Approche</a>
+      </nav>
+
+      <!-- Bouton thème clair / sombre -->
+      <button id="theme-btn" class="theme-btn" aria-label="Changer le thème">
+        <span class="theme-icon theme-icon--dark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="theme-icon theme-icon--light">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO — ACCROCHE
+       ============================================================ -->
+  <section class="hero-section">
+    <div class="container">
+      <p class="hero-eyebrow">Portfolio · Design</p>
+      <h1 class="hero-title">
+        Sélection de<br>
+        <em>projets de design</em>
+      </h1>
+      <p class="hero-sub">
+        Identité visuelle &middot; Affiches &middot; UI &middot; Présentations &middot; Cartographie
+      </p>
+      <a href="#projects" class="scroll-cta" aria-label="Voir les projets">
+        <span class="scroll-cta-text">Voir les projets</span>
+        <span class="scroll-cta-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </span>
+      </a>
+    </div>
+    <!-- Décorations flottantes -->
+    <div class="hero-deco hero-deco--circle" aria-hidden="true"></div>
+    <div class="hero-deco hero-deco--ring" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============================================================
+       SECTION PROJETS — GRILLE FILTRABLE
+       ============================================================ -->
+  <section class="projects-section" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">Réalisations</span>
+        <h2 class="section-title" id="projects-heading">Tous les projets</h2>
+      </div>
+
+      <!-- Barre de filtres par catégorie -->
+      <div class="filter-bar" role="group" aria-label="Filtrer par catégorie">
+        <button class="filter-btn active" data-filter="all"          id="filter-all">Tout</button>
+        <button class="filter-btn"        data-filter="identite"     id="filter-identite">Identité visuelle</button>
+        <button class="filter-btn"        data-filter="print"        id="filter-print">Print &amp; Étiquettes</button>
+        <button class="filter-btn"        data-filter="affiches"     id="filter-affiches">Affiches</button>
+        <button class="filter-btn"        data-filter="tshirt"       id="filter-tshirt">T-shirt / Merch</button>
+      </div>
+
+      <!-- Grille des projets (vrais travaux) -->
+      <div class="projects-grid" id="projects-grid" aria-live="polite">
+
+        <!-- ======== PROJET 1 : Identité Fiaky Compagnie (carte large) ======== -->
+        <article class="project-card project-card--wide" data-category="identite" data-project="fiaky-brand">
+          <div class="card-image-wrap">
+            <img
+              src="sary/2.png"
+              alt="Branding Fiaky Compagnie — logo aigle doré sur fond sombre"
+              class="card-img"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="fiaky-brand" aria-label="Ouvrir le projet Fiaky Compagnie — Identité visuelle">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Identité visuelle</span>
+              <span class="card-tools">Canva Pro</span>
+            </div>
+            <h3 class="card-title">Fiaky Compagnie — Identité visuelle</h3>
+            <p class="card-desc">Création complète de l'identité visuelle de Fiaky Compagnie : logotype aigle doré sur fond sombre, palette noir &amp; or, typographie premium et déclinaison sur carte de visite.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET NOUVEAU : Identité Visuelle (Mockup) ======== -->
+        <article class="project-card" data-category="identite" data-project="identity-01">
+          <div class="card-image-wrap">
+            <img
+              src="sary/mockup_identity.png"
+              alt="Mockup Identité Visuelle"
+              class="card-img"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="identity-01" aria-label="Ouvrir le projet Identité Visuelle">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Identité visuelle</span>
+              <span class="card-tools">Illustrator · Photoshop</span>
+            </div>
+            <h3 class="card-title">Système d'Identité Visuelle</h3>
+            <p class="card-desc">Projet de création d'identité cohérente et déclinable avec un rendu réaliste sur différents supports de communication.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET 2 : Logo hexagonal ======== -->
+        <article class="project-card" data-category="identite" data-project="logo-hex">
+          <div class="card-image-wrap">
+            <img
+              src="sary/LOGO SEUL.png"
+              alt="Logo hexagonal marine et saumon — icône maison stylisée"
+              class="card-img card-img--contain"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="logo-hex" aria-label="Ouvrir le projet Logo Hexagonal">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Identité visuelle</span>
+              <span class="card-tools">Canva Pro</span>
+            </div>
+            <h3 class="card-title">Logo Hexagonal — Icône Immobilier</h3>
+            <p class="card-desc">Conception d'un logo géométrique en hexagone associant une icône de maison stylisée. Palette bicolore marine / saumon, lisible en toute taille.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET NOUVEAU : Logo Branding ======== -->
+        <article class="project-card" data-category="identite" data-project="logo-branding">
+          <div class="card-image-wrap">
+            <img
+              src="sary/logo-branding.jpg"
+              alt="Logo Branding Alternatif"
+              class="card-img"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="logo-branding" aria-label="Ouvrir le projet Logo Branding Alternatif">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Identité visuelle</span>
+              <span class="card-tools">Illustrator · Photoshop</span>
+            </div>
+            <h3 class="card-title">Logo Branding Alternatif</h3>
+            <p class="card-desc">Exploration de branding et conception d'un logotype additionnel avec un design moderne et mémorable.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET NOUVEAU : Logo Simple ======== -->
+        <article class="project-card" data-category="identite" data-project="logo-simple">
+          <div class="card-image-wrap">
+            <img
+              src="sary/logo.png"
+              alt="Design de Logotype simple"
+              class="card-img card-img--contain"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="logo-simple" aria-label="Ouvrir le projet Logo Simple">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Identité visuelle</span>
+              <span class="card-tools">Illustrator</span>
+            </div>
+            <h3 class="card-title">Design de Logotype</h3>
+            <p class="card-desc">Création d'un logo clair, polyvalent et très lisible, pensé pour être le plus direct et reconnaissable possible.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET 3 : Carte de visite Fiaky ======== -->
+        <article class="project-card project-card--wide" data-category="print" data-project="cv-fiaky">
+          <div class="card-image-wrap">
+            <img
+              src="sary/carte-visite.png"
+              alt="Carte de visite Fiaky Compagnie — fond noir, accent or, portrait"
+              class="card-img"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="cv-fiaky" aria-label="Ouvrir le projet Carte de Visite Fiaky Compagnie">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Print &amp; Étiquettes</span>
+              <span class="card-tools">Canva Pro</span>
+            </div>
+            <h3 class="card-title">Carte de Visite — Fiaky Compagnie</h3>
+            <p class="card-desc">Design de carte de visite premium : fond noir mat avec ondes dorées, portrait encadré d'un cercle or, typographie élégante. Déclinaison recto / verso cohérente avec la charte Fiaky.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET 4 : Étiquette ronde "Thank You" ======== -->
+        <article class="project-card" data-category="print" data-project="sticker-round">
+          <div class="card-image-wrap">
+            <img
+              src="sary/CHOIX 2 Rond.png"
+              alt="Étiquette ronde Thank You — soutenance de licence ISPM"
+              class="card-img card-img--contain"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="sticker-round" aria-label="Ouvrir le projet Étiquette ronde Thank You">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Print &amp; Étiquettes</span>
+              <span class="card-tools">Canva Pro</span>
+            </div>
+            <h3 class="card-title">Étiquette Ronde — Soutenance de Licence</h3>
+            <p class="card-desc">Création d'une étiquette ronde de remerciement pour une soutenance de mémoire de licence. Graphisme tech (circuits imprimés), typographie calligraphique, déclinaison ronde et rectangulaire.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET 5 : Étiquette rectangulaire ======== -->
+        <article class="project-card" data-category="print" data-project="sticker-rect">
+          <div class="card-image-wrap">
+            <img
+              src="sary/etiQ RECT.png"
+              alt="Étiquette rectangulaire Thank You — version panoramique"
+              class="card-img"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="sticker-rect" aria-label="Ouvrir le projet Étiquette rectangulaire Thank You">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Print &amp; Étiquettes</span>
+              <span class="card-tools">Canva Pro</span>
+            </div>
+            <h3 class="card-title">Étiquette Rectangulaire — Thank You</h3>
+            <p class="card-desc">Version panoramique de l'étiquette de remerciement : fond dégradé vert pâle, motifs circuits, citation malagasy et hexagones décoratifs. Prête pour impression autocollante.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET 6 : Affiche FC Barcelone ======== -->
+        <article class="project-card" data-category="affiches" data-project="barca-poster">
+          <div class="card-image-wrap">
+            <img
+              src="sary/affiche-publicitaire.jpg"
+              alt="Affiche FC Barcelone — composition sportive avec montage photo"
+              class="card-img"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="barca-poster" aria-label="Ouvrir le projet Affiche FC Barcelone">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Affiches</span>
+              <span class="card-tools">Canva Pro · Photomontage</span>
+            </div>
+            <h3 class="card-title">Affiche Sportive — FC Barcelone</h3>
+            <p class="card-desc">Composition publicitaire sportive : montage photographique multi-joueurs sur fond stade, typographie bold, palette aux couleurs du club. Format carré optimisé pour les réseaux sociaux.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET NOUVEAU : Affiche Culturelle (Mockup) ======== -->
+        <article class="project-card" data-category="affiches" data-project="poster-01">
+          <div class="card-image-wrap">
+            <img
+              src="sary/mockup_poster.png"
+              alt="Série d'Affiches Culturelles"
+              class="card-img"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="poster-01" aria-label="Ouvrir le projet Affiche">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">Affiches</span>
+              <span class="card-tools">Photoshop · InDesign</span>
+            </div>
+            <h3 class="card-title">Série d'Affiches Culturelles</h3>
+            <p class="card-desc">Conception d'affiches percutantes pour des événements avec une forte cohérence visuelle.</p>
+          </div>
+        </article>
+
+        <!-- ======== PROJET 7 : T-shirt Engineer ======== -->
+        <article class="project-card" data-category="tshirt" data-project="tshirt-engineer">
+          <div class="card-image-wrap">
+            <img
+              src="sary/tshirt-design.jpg"
+              alt="T-shirt Proud to be an Engineer — design technique sur blanc"
+              class="card-img card-img--contain"
+              loading="lazy">
+            <div class="card-image-overlay">
+              <button class="open-modal-btn" data-project="tshirt-engineer" aria-label="Ouvrir le projet T-shirt Engineer">
+                Voir le projet
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-category">T-shirt / Merch</span>
+              <span class="card-tools">Canva Pro · Print-on-demand</span>
+            </div>
+            <h3 class="card-title">T-shirt Design — Proud to be an Engineer</h3>
+            <p class="card-desc">Création d'un design broderie/sérigraphie pour t-shirt à destination d'étudiants en génie. Motif engrenage technique avec icônes d'ingénierie, badge central, typographie contrastée.</p>
+          </div>
+        </article>
+
+      </div><!-- /.projects-grid -->
+
+      <!-- Message si aucun résultat pour un filtre -->
+      <p class="no-results" id="no-results" hidden>
+        Aucun projet dans cette catégorie pour le moment.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION APPROCHE
+       ============================================================ -->
+  <section class="about-work-section" id="about-work" aria-labelledby="about-work-title">
+    <div class="container">
+      <div class="about-work-grid">
+
+        <div class="about-work-text">
+          <span class="section-label">Approche</span>
+          <h2 class="section-title" id="about-work-title">
+            Chaque projet commence<br>par une intention
+          </h2>
+          <p class="about-para">
+            Le design n'est pas un habillage — c'est une prise de position. Chaque choix typographique, chaque couleur, chaque mise en page répond à un objectif précis : clarifier, convaincre ou émouvoir.
+          </p>
+          <p class="about-para">
+            Cette sélection couvre des disciplines variées, de la cartographie aux interfaces numériques, en passant par l'identité visuelle et les productions print. La rigueur technique y rencontre la sensibilité graphique.
+          </p>
+        </div>
+
+        <div class="about-work-values">
+          <div class="value-item">
+            <span class="value-num">01</span>
+            <div>
+              <h3 class="value-title">Clarté</h3>
+              <p class="value-desc">Hiérarchie visuelle soignée. Information accessible au premier regard.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">02</span>
+            <div>
+              <h3 class="value-title">Cohérence</h3>
+              <p class="value-desc">Système de design rigoureux, déclinable sur tous les supports.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">03</span>
+            <div>
+              <h3 class="value-title">Impact</h3>
+              <p class="value-desc">Compositions mémorables, résultat mesurable pour le commanditaire.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER MINIMAL
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">&copy; 2026 &middot; Portfolio Design &middot; Tous droits réservés</span>
+      <a href="#top" class="footer-top-btn" aria-label="Retourner en haut de page">
+        Haut de page
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MODAL DÉTAIL DE PROJET
+       ============================================================ -->
+  <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" hidden>
+    <div class="modal-panel">
+      <!-- Bouton fermeture -->
+      <button id="modal-close" class="modal-close-btn" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <!-- Contenu injecté par JavaScript -->
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Script principal -->
+  <script src="portfolio.js"></script>
+</body>
+</html>
